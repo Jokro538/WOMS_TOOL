@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/AuftrDatum"
+        android:id="@+id/txtAuftrDatum"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="59dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="##.##.####"
+        android:id="@+id/textView13"
+        android:layout_alignBottom="@+id/txtAuftrDatum"
+        android:layout_toEndOf="@+id/txtAuftrDatum"
+        android:layout_marginStart="34dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/AuftrNr"
+        android:id="@+id/txtAuftrNr"
+        android:layout_below="@+id/txtAuftrDatum"
+        android:layout_alignStart="@+id/txtAuftrDatum"
+        android:layout_marginTop="36dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00001"
+        android:id="@+id/textView15"
+        android:layout_alignTop="@+id/txtAuftrNr"
+        android:layout_alignStart="@+id/textView13" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Beschreibung:"
+        android:id="@+id/txtBeschr"
+        android:layout_below="@+id/txtAuftrNr"
+        android:layout_alignStart="@+id/txtAuftrNr"
+        android:layout_marginTop="38dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Aufnehmer"
+        android:id="@+id/txtAufgen"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/txtBeschr"
+        android:layout_alignStart="@+id/txtBeschr" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Objekt"
+        android:id="@+id/txtObj"
+        android:layout_alignTop="@+id/textView13"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/RNr"
+        android:id="@+id/txtRaumNr"
+        android:layout_alignTop="@+id/textView15"
+        android:layout_alignStart="@+id/txtObj" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Mngl"
+        android:id="@+id/txtMangel"
+        android:layout_above="@+id/txtAufgen"
+        android:layout_alignStart="@+id/txtRaumNr" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Bearbeiter"
+        android:id="@+id/txtBearbeiter"
+        android:layout_alignBottom="@+id/txtAufgen"
+        android:layout_alignStart="@+id/txtMangel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/gepRepDauer"
+        android:id="@+id/txtGepDauer"
+        android:layout_alignTop="@+id/txtGepDatum"
+        android:layout_alignStart="@+id/txtBearbeiter" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/gepRepDatum"
+        android:id="@+id/txtGepDatum"
+        android:layout_below="@+id/txtAufgen"
+        android:layout_alignStart="@+id/txtAufgen"
+        android:layout_marginTop="42dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnBild"
+        android:id="@+id/btnNewImg"
+        android:layout_alignTop="@+id/imgViewHa"
+        android:layout_alignEnd="@+id/txtGepDatum" />
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:id="@+id/imgViewHa"
+        android:layout_below="@+id/txtGepDauer"
+        android:layout_alignStart="@+id/txtBearbeiter"
+        android:layout_marginTop="44dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/RepDauer"
+        android:id="@+id/txtRepdauer"
+        android:layout_below="@+id/imgViewHa"
+        android:layout_alignStart="@+id/txtGepDatum" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/MatBed"
+        android:id="@+id/txtMatbedarf"
+        android:layout_below="@+id/btnNewImg"
+        android:layout_alignEnd="@+id/txtAuftrNr"
+        android:layout_marginTop="51dp" />
+</RelativeLayout>

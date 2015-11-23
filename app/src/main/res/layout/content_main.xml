@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main" tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Date"
+        android:id="@+id/txtDatum"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextClock
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:id="@+id/textClock"
+        android:layout_marginStart="83dp"
+        android:layout_alignBottom="@+id/txtDatum"
+        android:layout_toEndOf="@+id/txtDatum" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Objekt"
+        android:id="@+id/txtObjekt"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Objektname"
+        android:id="@+id/txtObjName"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/txtObjekt"
+        android:layout_marginStart="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/AuftrNr"
+        android:id="@+id/txtAuftrag"
+        android:layout_below="@+id/txtDatum"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="67dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0001"
+        android:id="@+id/txtNr"
+        android:layout_alignTop="@+id/txtAuftrag"
+        android:layout_toEndOf="@+id/txtAufgenommen" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/RNr"
+        android:id="@+id/txtRaum"
+        android:layout_below="@+id/spinnerMangel"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:id="@+id/inRaum"
+        android:autoText="false"
+        android:editable="true"
+        android:text="2.34"
+        android:layout_alignBottom="@+id/txtRaum"
+        android:layout_alignEnd="@+id/textClock" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Mngl"
+        android:id="@+id/txtMangel"
+        android:layout_alignTop="@+id/txtNr"
+        android:layout_alignStart="@+id/txtObjekt" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerMangel"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/txtMangel"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/txtObjName"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Descr"
+        android:id="@+id/txtBeschreibung"
+        android:layout_marginTop="80dp"
+        android:layout_below="@+id/prio1"
+        android:layout_alignStart="@+id/txtRaum" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Aufnehmer"
+        android:id="@+id/txtAufgenommen"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="90dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name Mitarbeiter"
+        android:id="@+id/txtBearbeiter"
+        android:layout_alignTop="@+id/txtAufgenommen"
+        android:layout_toStartOf="@+id/txtPrio" />
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:id="@+id/imageView"
+        android:layout_alignBottom="@+id/txtBearbeiter"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bild hinzufügen.."
+        android:id="@+id/btnBild"
+        android:layout_below="@+id/editBeschreibung"
+        android:layout_toEndOf="@+id/txtAuftrag"
+        android:layout_marginTop="52dp" />
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hoch"
+        android:id="@+id/prio1"
+        android:checked="true"
+        android:layout_alignTop="@+id/prio2"
+        android:layout_toStartOf="@+id/prio2"
+        android:onClick="onRadioButtonClicked"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mittel"
+        android:id="@+id/prio2"
+        android:checked="false"
+        android:layout_alignTop="@+id/prio3"
+        android:layout_toStartOf="@+id/prio3"
+        android:onClick="onRadioButtonClicked"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="niedrig"
+        android:id="@+id/prio3"
+        android:checked="false"
+        android:layout_alignTop="@+id/txtPrio"
+        android:layout_alignEnd="@+id/imageView"
+        android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Prio"
+        android:id="@+id/txtPrio"
+        android:layout_below="@+id/inRaum"
+        android:layout_alignStart="@+id/txtMangel" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editBeschreibung"
+        android:layout_alignTop="@+id/txtBeschreibung"
+        android:layout_alignStart="@+id/inRaum" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAuftragAnlegen"
+        android:text="@string/Anlegen"
+        android:layout_above="@+id/txtAufgenommen"
+        android:layout_alignEnd="@+id/btnBild" />
+
+</RelativeLayout>

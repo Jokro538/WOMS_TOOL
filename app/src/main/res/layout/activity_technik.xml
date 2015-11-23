@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/AuftrDatum"
+        android:id="@+id/txtAuftrDatum"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="46dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/AuftrNr"
+        android:id="@+id/txtAuftrNr"
+        android:layout_below="@+id/txtAuftrDatum"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/RNr"
+        android:id="@+id/txtRaumNr"
+        android:layout_below="@+id/txtAuftrNr"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Descr"
+        android:id="@+id/txtBeschr"
+        android:layout_below="@+id/txtRaumNr"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Objekt"
+        android:id="@+id/txtObjekt"
+        android:layout_marginEnd="377dp"
+        android:layout_alignTop="@+id/txtAuftrDatum"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Mngl"
+        android:id="@+id/txtMangel"
+        android:layout_below="@+id/txtObjekt"
+        android:layout_alignStart="@+id/txtObjekt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Prio"
+        android:id="@+id/txtPrio"
+        android:layout_alignTop="@+id/txtRaumNr"
+        android:layout_alignStart="@+id/txtMangel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Aufnehmer"
+        android:id="@+id/txtAufnehmer"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/HMeister"
+        android:id="@+id/txtHausmeister"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/txtAufnehmer"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/editHausmeister"
+        android:layout_alignBottom="@+id/txtHausmeister"
+        android:layout_toEndOf="@+id/txtAuftrDatum" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/gepRepDatum"
+        android:id="@+id/txtRepDate"
+        android:layout_alignTop="@+id/editRepDate"
+        android:layout_toStartOf="@+id/editRepDate" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editRepDate"
+        android:layout_alignBottom="@+id/editHausmeister"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/gepRepDauer"
+        android:id="@+id/txtGepDauer"
+        android:layout_below="@+id/txtHausmeister"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="56dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerDauer"
+        android:layout_alignBottom="@+id/txtGepDauer"
+        android:layout_alignEnd="@+id/editHausmeister"
+        android:layout_toEndOf="@+id/txtAufnehmer"
+        android:spinnerMode="dropdown" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerDauerValue"
+        android:layout_alignTop="@+id/spinnerDauer"
+        android:layout_toEndOf="@+id/spinnerDauer" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/gepMatBed"
+        android:id="@+id/txtMatbedarf"
+        android:layout_alignBottom="@+id/spinnerDauerValue"
+        android:layout_alignStart="@+id/txtRepDate" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editMatbedarf"
+        android:layout_alignTop="@+id/txtMatbedarf"
+        android:layout_alignStart="@+id/editRepDate" />
+</RelativeLayout>
