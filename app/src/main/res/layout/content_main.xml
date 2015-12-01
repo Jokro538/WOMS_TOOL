@@ -100,6 +100,7 @@
         android:layout_alignTop="@+id/txtMangel"
         android:layout_alignParentEnd="true"
         android:layout_alignStart="@+id/txtObjName"
+        android:entries="@array/KatItems"
         />
 
     <TextView
@@ -150,35 +151,39 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hoch"
-        android:id="@+id/prio1"
-        android:checked="true"
-        android:layout_alignTop="@+id/prio2"
-        android:layout_toStartOf="@+id/prio2"
-        android:onClick="onRadioButtonClicked"/>
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="mittel"
-        android:id="@+id/prio2"
-        android:checked="false"
-        android:layout_alignTop="@+id/prio3"
-        android:layout_toStartOf="@+id/prio3"
-        android:onClick="onRadioButtonClicked"/>
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="niedrig"
-        android:id="@+id/prio3"
-        android:checked="false"
-        android:layout_alignTop="@+id/txtPrio"
-        android:layout_alignEnd="@+id/imageView"
-        android:onClick="onRadioButtonClicked"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hoch"
+            android:id="@+id/prio1"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"
+            android:layout_alignTop="@+id/txtPrio"
+            android:layout_alignStart="@+id/spinnerMangel" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mittel"
+            android:id="@+id/prio2"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"
+            android:layout_above="@+id/txtBeschreibung"
+            android:layout_toEndOf="@+id/txtObjName" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="niedrig"
+            android:id="@+id/prio3"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"
+            android:layout_alignTop="@+id/prio2"
+            android:layout_toEndOf="@+id/prio2"
+            android:layout_marginStart="37dp" />
+
     </RadioGroup>
 
     <TextView
@@ -204,7 +209,44 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnAuftragAnlegen"
         android:text="@string/Anlegen"
-        android:layout_above="@+id/txtAufgenommen"
-        android:layout_alignEnd="@+id/btnBild" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Belegung beeinträchtigt:"
+        android:id="@+id/txtBelegung"
+        android:layout_above="@+id/editBeschreibung"
+        android:layout_alignStart="@+id/txtPrio" />
+
+
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nein"
+        android:id="@+id/rBel_Nein"
+        android:layout_alignTop="@+id/rBel_Ja"
+        android:layout_toEndOf="@+id/rBel_Ja"
+        android:layout_marginStart="36dp"
+        android:checked="false" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ja"
+            android:id="@+id/rBel_Ja"
+            android:checked="false"
+            android:layout_alignTop="@+id/txtBelegung"
+            android:layout_toEndOf="@+id/prio2" />
+
+    </RadioGroup>
 
 </RelativeLayout>

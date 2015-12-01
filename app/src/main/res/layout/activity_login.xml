@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="4"
+    android:columnCount="22">
+
+    <ImageView
+        android:layout_width="701dp"
+        android:layout_height="177dp"
+        android:id="@+id/imgViewLogin"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Benutzer"
+        android:id="@+id/txtUser"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/imgViewLogin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Passwort"
+        android:id="@+id/txtpw"
+        android:layout_below="@+id/txtUser"
+        android:layout_alignStart="@+id/txtUser"
+        android:layout_marginTop="49dp" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editUser"
+        android:layout_alignTop="@+id/txtUser"
+        android:layout_toEndOf="@+id/txtpw"
+        android:layout_marginStart="104dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editPW"
+        android:layout_alignBottom="@+id/txtpw"
+        android:layout_alignStart="@+id/editUser" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Login"
+        android:id="@+id/btnLogin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/editUser"
+        android:layout_marginBottom="85dp" />
+
+</RelativeLayout>

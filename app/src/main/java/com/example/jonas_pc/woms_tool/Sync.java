@@ -1,6 +1,7 @@
 package com.example.jonas_pc.woms_tool;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -16,12 +17,12 @@ import java.net.URL;
  */
 public class Sync {
 
-    public Sync(JSONArray jAuftr, DBHandler db, String server ){
+    public Sync(JSONArray jAuftr, DBHandler db, String server ) {
 
-        try{
+        try {
             //Verbindung zum Server herstellen
             URL url = new URL(server);
-            HttpURLConnection con =(HttpURLConnection)url.openConnection();
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
             //post Variable an JSON-Array übergeben
             String data = "data=" + jAuftr;
@@ -39,9 +40,9 @@ public class Sync {
             out.close();
 
 
-            JSONArray mJsonArray = new JSONArray(readStream(con.getInputStream()).replace('"','\"'));
+            JSONArray mJsonArray = new JSONArray(readStream(con.getInputStream()).replace('"', '\"'));
             JSONObject mJsonObject;
-            for (int i=0; i<mJsonArray.length();i++){
+            for (int i = 0; i < mJsonArray.length(); i++) {
                 mJsonObject = mJsonArray.getJSONObject(i);
 
                 Auftrag auftrag = new Auftrag();
@@ -54,10 +55,12 @@ public class Sync {
                 db.addAuftrag(auftrag);
             }
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
 
     //Methode um InputStream in String umzuwandeln
     public String readStream(InputStream in){

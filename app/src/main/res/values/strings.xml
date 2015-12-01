@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WOMS_Tool</string>
+    <string name="app_name">WOMS Tool</string>
     <string name="action_settings">Settings</string>
     <string name="Date">Datum: </string>
     <string name="Objekt">Objekt: </string>
@@ -19,6 +19,10 @@
     <string name="HMeister">Hausmeister: </string>
     <string name="gepMatBed">geplanter Materialbedarf:</string>
     <string name="Anlegen">Auftrag anlegen</string>
+    <string name="Login">Login</string>
+    <string name="MangelArt">Art des Mangels: </string>
+    <string name="AuftrAns">Aufträge ansehen</string>
+    <string name="AuftrNew">Neuer Auftrag</string>
 
 
 </resources>

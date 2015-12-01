@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="KatItems">
+        <item>Wasser</item>
+        <item>Elektrik</item>
+        <item>Raum</item>
+        <item>item4</item>
+    </string-array>
+    <string-array name="Hmeister">
+        <item>Duro Derek</item>
+        <item>Miroslaw Zelichowski</item>
+        <item>Detlef Struck</item>
+        <item>Marian Czech</item>
+        <item>Mathias Aßmann</item>
+        <item>Janusz Szober</item>
+    </string-array>
+</resources>

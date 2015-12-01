@@ -1,6 +1,5 @@
 package com.example.jonas_pc.woms_tool;
 
-import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -11,17 +10,20 @@ public class Auftrag {
     //Variablen
     private String _auftrID;
     private String _raum;
-    private int _prio;
+    private String _prio;
     private String _status_flag;
-    private Date _datum;
+    private String _datum;
     private String _beschreibung;
     private String _kategorie;
+    private String _belegung;
+    private String _aufnehmer;
+    private String _objekt;
 
     public Auftrag(){
-        this._auftrID= UUID.randomUUID().toString();
+        this._auftrID = UUID.randomUUID().toString();
     }
 
-    public Auftrag(String auftrID,String beschreibung,String raum,String status_flag,int prio,Date datum,String kategorie){
+    public Auftrag(String auftrID,String beschreibung,String raum,String status_flag,String prio,String datum,String kategorie,String belegung, String aufnehmer, String objekt){
         this._auftrID=auftrID;
         this._raum=raum;
         this._status_flag=status_flag;
@@ -29,6 +31,10 @@ public class Auftrag {
         this._prio=prio;
         this._beschreibung=beschreibung;
         this._kategorie=kategorie;
+        this._belegung=belegung;
+        this._aufnehmer=aufnehmer;
+        this._objekt=objekt;
+
     }
 
    //Auftrags-ID Get/Set
@@ -47,14 +53,14 @@ public class Auftrag {
     public void setRaum(String raum){this._raum=raum;}
 
     //Priorität
-    public int getPrio(){return this._prio;}
+    public String getPrio(){return this._prio;}
 
-    public void setPrio(int prio){this._prio=prio;}
+    public void setPrio(String prio){this._prio=prio;}
 
     //Datum
-    public Date getDatum(){return this._datum;}
+    public String getDatum(){return this._datum;}
 
-    public void setDatum(Date datum){this._datum=datum;}
+    public void setDatum(String datum){this._datum=datum;}
 
     //Beschreibung
     public String getBeschreibung(){return this._beschreibung;}
@@ -65,6 +71,11 @@ public class Auftrag {
     public String getKat(){return this._kategorie;}
 
     public void setKat(String kategorie){this._kategorie=kategorie;}
+
+    //Belegung
+    public String getBelegung(){return this._belegung;}
+
+    public void setBelegung(String belegung){this._belegung=belegung;}
 
 
 }
