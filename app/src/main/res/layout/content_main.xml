@@ -70,7 +70,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/RNr"
         android:id="@+id/txtRaum"
-        android:layout_below="@+id/spinnerMangel"
+        android:layout_below="@+id/txtMangel"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -89,19 +89,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/Mngl"
         android:id="@+id/txtMangel"
-        android:layout_alignTop="@+id/txtNr"
-        android:layout_alignStart="@+id/txtObjekt" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerMangel"
-        android:spinnerMode="dropdown"
-        android:layout_alignTop="@+id/txtMangel"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/txtObjName"
-        android:entries="@array/KatItems"
-        />
+        android:layout_below="@+id/txtNr"
+        android:layout_toStartOf="@+id/txtObjName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -109,9 +98,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/Descr"
         android:id="@+id/txtBeschreibung"
-        android:layout_marginTop="80dp"
-        android:layout_below="@+id/prio1"
-        android:layout_alignStart="@+id/txtRaum" />
+
+        android:layout_below="@+id/radioGroup2"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -144,14 +133,80 @@
         android:layout_height="wrap_content"
         android:text="Bild hinzufügen.."
         android:id="@+id/btnBild"
-        android:layout_below="@+id/editBeschreibung"
-        android:layout_toEndOf="@+id/txtAuftrag"
-        android:layout_marginTop="52dp" />
-    <RadioGroup
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_alignTop="@+id/imageView"
+        android:layout_toStartOf="@+id/txtBearbeiter" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Prio"
+        android:id="@+id/txtPrio"
+        android:layout_below="@+id/inRaum"
+        android:layout_alignStart="@+id/txtMangel"
+        android:layout_marginTop="71dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editBeschreibung"
+        android:layout_alignTop="@+id/txtBeschreibung"
+        android:layout_alignStart="@+id/inRaum" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAuftragAnlegen"
+        android:text="@string/Anlegen"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Belegung beeinträchtigt:"
+        android:id="@+id/txtBelegung"
+        android:layout_above="@+id/txtNr"
+        android:layout_alignEnd="@+id/txtObjName" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignTop="@+id/txtBelegung"
+        android:layout_toEndOf="@+id/txtBelegung">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nein"
+            android:id="@+id/rBel_Nein"
+            android:layout_alignTop="@+id/radioButton5"
+            android:layout_toEndOf="@+id/radioButton5"
+            android:layout_marginStart="36dp"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ja"
+            android:id="@+id/rBel_Ja"
+            android:checked="false"
+            android:layout_alignTop="@+id/txtBelegung"
+            android:layout_toEndOf="@+id/prio2" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignTop="@+id/txtPrio"
+        android:id="@+id/radioGroup2"
+        android:layout_alignStart="@+id/txtObjName">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -180,73 +235,19 @@
             android:id="@+id/prio3"
             android:checked="false"
             android:onClick="onRadioButtonClicked"
-            android:layout_alignTop="@+id/prio2"
-            android:layout_toEndOf="@+id/prio2"
+            android:layout_alignTop="@+id/radioButton7"
+            android:layout_toEndOf="@+id/radioButton7"
             android:layout_marginStart="37dp" />
-
     </RadioGroup>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/Prio"
-        android:id="@+id/txtPrio"
-        android:layout_below="@+id/inRaum"
-        android:layout_alignStart="@+id/txtMangel" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editBeschreibung"
-        android:layout_alignTop="@+id/txtBeschreibung"
-        android:layout_alignStart="@+id/inRaum" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnAuftragAnlegen"
-        android:text="@string/Anlegen"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:text="New Button"
+        android:id="@+id/btnMgl"
+        android:layout_above="@+id/txtPrio"
+        android:layout_alignStart="@+id/radioGroup2"
+        android:onClick="onClickMangel"/>
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Belegung beeinträchtigt:"
-        android:id="@+id/txtBelegung"
-        android:layout_above="@+id/editBeschreibung"
-        android:layout_alignStart="@+id/txtPrio" />
-
-
-
-    <RadioGroup
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="nein"
-        android:id="@+id/rBel_Nein"
-        android:layout_alignTop="@+id/rBel_Ja"
-        android:layout_toEndOf="@+id/rBel_Ja"
-        android:layout_marginStart="36dp"
-        android:checked="false" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ja"
-            android:id="@+id/rBel_Ja"
-            android:checked="false"
-            android:layout_alignTop="@+id/txtBelegung"
-            android:layout_toEndOf="@+id/prio2" />
-
-    </RadioGroup>
 
 </RelativeLayout>

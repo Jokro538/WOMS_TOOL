@@ -130,9 +130,8 @@
         android:layout_width="400dp"
         android:layout_height="250dp"
         android:id="@+id/imgViewHa"
-        android:layout_below="@+id/txtGepDauer"
-        android:layout_alignStart="@+id/txtBearbeiter"
-        android:layout_marginTop="44dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/btnAbschluss" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -152,4 +151,13 @@
         android:layout_below="@+id/btnNewImg"
         android:layout_alignEnd="@+id/txtAuftrNr"
         android:layout_marginTop="51dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auftrag abschließen"
+        android:id="@+id/btnAbschluss"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/txtMangel" />
+
 </RelativeLayout>

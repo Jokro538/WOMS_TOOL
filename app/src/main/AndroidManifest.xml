@@ -40,6 +40,10 @@
             android:name=".HausmeisterView"
             android:label="@string/app_name">
         </activity>
+        <activity
+            android:name=".KategorieView"
+            android:label="WOMS Tool">
+        </activity>
 
 
     </application>

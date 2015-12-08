@@ -6,6 +6,7 @@
         <item>Raum</item>
         <item>item4</item>
     </string-array>
+
     <string-array name="Hmeister">
         <item>Duro Derek</item>
         <item>Miroslaw Zelichowski</item>
@@ -13,5 +14,42 @@
         <item>Marian Czech</item>
         <item>Mathias Aßmann</item>
         <item>Janusz Szober</item>
+    </string-array>
+
+    <string-array name="sani">
+        <item>WC-Abfluss</item>
+        <item>Duschvorhang</item>
+        <item>Wasserhahn</item>
+        <item>Boiler</item>
+        <item>Waschbecken</item>
+        <item>Verstopfung</item>
+        <item>Verschmutzt</item>
+        <item>Malerarbeiten</item>
+    </string-array>
+
+    <string-array name="elektro">
+        <item>Licht</item>
+        <item>Lichtschalter</item>
+        <item>Steckdose</item>
+        <item>Sicherung</item>
+    </string-array>
+
+    <string-array name="zimmer">
+        <item>Schrank</item>
+        <item>Bett</item>
+        <item>Matratze</item>
+        <item>Kühlschrank</item>
+        <item>Tisch</item>
+        <item>Stuhl</item>
+        <item>Geschirr</item>
+        <item>Verschmutzt</item>
+        <item>Malerarbeiten</item>
+    </string-array>
+
+    <string-array name="küche">
+        <item>Herd</item>
+        <item>Spüle</item>
+        <item>Verschmutzt</item>
+        <item>Malerarbeiten</item>
     </string-array>
 </resources>

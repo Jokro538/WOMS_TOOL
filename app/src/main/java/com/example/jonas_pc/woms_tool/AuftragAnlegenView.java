@@ -2,42 +2,34 @@ package com.example.jonas_pc.woms_tool;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.StrictMode;
-import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RadioButton;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 public class AuftragAnlegenView extends ActionBarActivity implements View.OnClickListener {
 
     Button btnAuftragAnlegen;
     private String prio = "hoch";
     private String belegung = "ja";
-    private Spinner Kat, SubKat;
     private static final int CAMERA_REQUEST = 1888;
     private ImageView imageView;
+    private String zusatz;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,16 +43,14 @@ public class AuftragAnlegenView extends ActionBarActivity implements View.OnClic
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                File file = new File(Environment.getExternalStorageDirectory() + File.separator + "image.jpg");
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
-                startActivityForResult(intent, CAMERA_REQUEST);
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_REQUEST);
             }
         });
 
         btnAuftragAnlegen = (Button) findViewById(R.id.btnAuftragAnlegen);
         btnAuftragAnlegen.setOnClickListener(this);
-        Kat = (Spinner) findViewById(R.id.spinnerMangel);
+
     }
 
     @Override
@@ -88,36 +78,20 @@ public class AuftragAnlegenView extends ActionBarActivity implements View.OnClic
     //Funktion für das Aufnehmen und Anzeigen der Bilder
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //auf passenden requestCode prüfen
-        if (requestCode == CAMERA_REQUEST) {
-            File file = new File(Environment.getExternalStorageDirectory() + File.separator + "image.jpg");
-            Bitmap bitmap = decodeSampledBitmapFromFile(file.getAbsolutePath(), 1000, 700);
-            imageView.setImageBitmap(bitmap);
+
+
+        if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
+            if (data != null) {
+                Uri selectedImageUri = data.getData();
+                String filestring = selectedImageUri.getPath();
+
+                Bitmap bm = (Bitmap) data.getExtras().get("data");
+                Bitmap bmpPhoto = bm;
+                String bmpPhotoPath = filestring;
+                imageView.setImageBitmap(bmpPhoto);
+
+            }
         }
-    }
-
-    public static Bitmap decodeSampledBitmapFromFile(String path, int reqWidth, int reqHeight) {
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeFile(path, options);
-
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        options.inPreferredConfig = Bitmap.Config.RGB_565;
-        int inSampleSize = 1;
-
-        if (height > reqHeight) {
-            inSampleSize = Math.round((float) height / (float) reqHeight);
-        }
-        int expectedWidth = width / inSampleSize;
-
-        if (expectedWidth > reqWidth) {
-            inSampleSize = Math.round((float) width / (float) reqWidth);
-        }
-
-        options.inSampleSize = inSampleSize;
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeFile(path, options);
     }
 
     //Auslesen der Prioriät durch RadioButtons
@@ -152,6 +126,13 @@ public class AuftragAnlegenView extends ActionBarActivity implements View.OnClic
 
     }
 
+    //Methode für die Auswahl der Mangelkategorien:
+
+    public void onClickMangel(View v) {
+        Intent KategorieView = new Intent(this, KategorieView.class);
+        startActivity(KategorieView);
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -175,14 +156,15 @@ public class AuftragAnlegenView extends ActionBarActivity implements View.OnClic
         String datum = sdf.format(Calendar.getInstance().getTime());
 
 
-        String kategorie = String.valueOf(Kat.getSelectedItem());
+        // String kategorie = String.valueOf(Kat.getSelectedItem());
 
         //Status wird auf Update gesetzt und das Auftragsformular wird befüllt
         auftrag.setStatusFlag("U");
         auftrag.setRaum(raum);
         auftrag.setBeschreibung(beschreibung);
         auftrag.setDatum(datum);
-        auftrag.setKat(kategorie);
+        // auftrag.setKat(kategorie);
+        // auftrag.setAnmerkung(anmerkung);
         auftrag.setPrio(prio);
         auftrag.setBelegung(belegung);
 

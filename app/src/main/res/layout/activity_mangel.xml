@@ -18,30 +18,132 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerVertical="true"
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerSanitär"
+            android:layout_alignTop="@+id/spinnerElektrik"
+            android:layout_alignParentStart="true"
+            android:entries="@array/sani"/>
+
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerElektrik"
+            android:layout_marginEnd="66dp"
+            android:spinnerMode="dropdown"
+            android:layout_alignTop="@+id/spinnerZimmer"
+            android:layout_toStartOf="@+id/spinnerZimmer"
+            android:entries="@array/elektro"/>
+
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerZimmer"
+            android:layout_marginEnd="59dp"
+            android:spinnerMode="dropdown"
+            android:layout_alignTop="@+id/spinnerKüche"
+            android:layout_toStartOf="@+id/spinnerKüche"
+            android:entries="@array/zimmer"/>
+
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerKüche"
+            android:layout_marginTop="128dp"
+            android:spinnerMode="dropdown"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:entries="@array/küche"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/btnMangelEnter"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioGroup"
+            android:layout_above="@+id/btnMangelEnter"
             android:layout_centerHorizontal="true">
 
-            <Spinner
-                android:layout_width="268dp"
+            <RadioButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner3"
-                android:layout_gravity="center_horizontal|top" />
+                android:text="@string/fehlt"
+                android:id="@+id/rB_fehlt"
+                />
 
-            <Spinner
-                android:layout_width="299dp"
+            <RadioButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner2"
-                android:layout_gravity="left|top" />
+                android:text="@string/defekt"
+                android:id="@+id/rB_defekt"
+                 />
 
-            <Spinner
-                android:layout_width="342dp"
+            <RadioButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner4"
-                android:layout_gravity="right|top" />
-        </FrameLayout>
+                android:text="@string/tausch"
+                android:id="@+id/rB_tausch"
+
+                android:layout_marginBottom="81dp"
+                 />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/opt"
+            android:id="@+id/txtMglOpt"
+            android:layout_alignBottom="@+id/radioGroup"
+            android:layout_toStartOf="@+id/spinnerElektrik"
+            android:layout_marginBottom="121dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sani"
+            android:id="@+id/checkBoxSani"
+            android:layout_above="@+id/spinnerSanitär"
+            android:layout_alignParentStart="true"
+            android:onClick="onCheckBoxClicked"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/elektrik"
+            android:id="@+id/checkBoxElektrik"
+            android:layout_above="@+id/spinnerZimmer"
+            android:layout_toEndOf="@+id/spinnerElektrik"
+            android:onClick="onCheckBoxClicked"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zimmer"
+            android:id="@+id/checkBoxZimmer"
+            android:layout_above="@+id/spinnerElektrik"
+            android:layout_alignStart="@+id/spinnerElektrik"
+            android:onClick="onCheckBoxClicked"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/küche"
+            android:id="@+id/checkBoxKüche"
+            android:layout_above="@+id/spinnerZimmer"
+            android:layout_toEndOf="@+id/spinnerZimmer"
+            android:onClick="onCheckBoxClicked"/>
     </RelativeLayout>
 
 </LinearLayout>

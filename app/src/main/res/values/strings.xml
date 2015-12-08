@@ -23,6 +23,14 @@
     <string name="MangelArt">Art des Mangels: </string>
     <string name="AuftrAns">Aufträge ansehen</string>
     <string name="AuftrNew">Neuer Auftrag</string>
+    <string name="sani">Sanitär: </string>
+    <string name="elektrik">Elektrik: </string>
+    <string name="zimmer">Bewohnerzimmer: </string>
+    <string name="küche">Küche: </string>
+    <string name="defekt"> defekt</string>
+    <string name="tausch"> muss ausgetauscht werden</string>
+    <string name="fehlt"> fehlt</string>
+    <string name="opt">optional: </string>
 
 
 </resources>
